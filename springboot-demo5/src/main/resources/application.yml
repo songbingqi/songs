@@ -1,0 +1,21 @@
+#项目端口和路径
+server:
+  port: 8888
+  servlet:    context-path: /springboot5
+#Springmvc的视图解析器
+spring:  mvc:    view:      prefix: /WEB-INF/jsp/
+      suffix: .jsp
+#设置匹配action后缀的请求的配置    pathmatch:      use-suffix-pattern: false
+      use-registered-suffix-pattern: true
+#连接数据库的基本信息
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/imdb?useUnicode=true&characterEncoding=utf-8
+    username: root
+    password: root
+#映射文件所扫描的包的路径，首先要加Mybatis的pom支持
+mybatis:
+  type-aliases-package: com.company.pojo
+  mapper-locations: classpath:mapper/*.xml
+    
+    
